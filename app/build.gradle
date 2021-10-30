@@ -64,6 +64,8 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
+    //SPLASH SCREEN CORE API
+    implementation "androidx.core:core-splashscreen:1.0.0-alpha02"
     def accompanist_version = '0.20.0'
 
     // ACCOMPANIST NAVIGATION ANIMATION

@@ -4,7 +4,10 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
+import androidx.compose.material.ripple.RippleAlpha
+import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
     primary = Accent,
@@ -40,4 +43,22 @@ fun LouBankUIDesignTheme(
         shapes = Shapes,
         content = content
     )
+}
+
+object RippleCustomTheme: RippleTheme {
+
+    //Your custom implementation...
+    @Composable
+    override fun defaultColor() =
+        RippleTheme.defaultRippleColor(
+            Color.White,
+            lightTheme = true
+        )
+
+    @Composable
+    override fun rippleAlpha(): RippleAlpha =
+        RippleTheme.defaultRippleAlpha(
+            Color.Black,
+            lightTheme = true
+        )
 }

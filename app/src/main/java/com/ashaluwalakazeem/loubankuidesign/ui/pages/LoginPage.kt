@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -56,7 +57,7 @@ fun LoginPage(rootNavigation: NavHostController) {
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         val drawable =
-                            AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_logo)
+                            AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_logo1)
                         Image(
                             painter = rememberDrawablePainter(drawable = drawable),
                             contentDescription = null,
@@ -85,63 +86,65 @@ fun LoginPage(rootNavigation: NavHostController) {
 
 @Composable
 private fun LoginPageContent(rootNavigation: NavHostController) {
-    Column(
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        val drawable = AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_logo2)
-        Image(
-            painter = rememberDrawablePainter(drawable = drawable),
-            contentDescription = null,
-            modifier = Modifier.padding(bottom = 60.dp)
-        )
+        item{
+            val drawable = AppCompatResources.getDrawable(LocalContext.current, R.drawable.ic_logo2)
+            Image(
+                painter = rememberDrawablePainter(drawable = drawable),
+                contentDescription = null,
+                modifier = Modifier.padding(bottom = 60.dp)
+            )
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 40.dp)
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(
-                            White,
-                            Accent
-                        )
-                    ),
-                    shape = RoundedCornerShape(percent = 50)
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 40.dp)
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                White,
+                                Accent
+                            )
+                        ),
+                        shape = RoundedCornerShape(percent = 50)
+                    )
+                    .clickable {
+                        rootNavigation.navigate(passCodePageRoute)
+                    }
+            ) {
+                Text(
+                    text = "Log In",
+                    color = TextDarkColor,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .padding(15.dp)
                 )
-                .clickable {
-                    rootNavigation.navigate(passCodePageRoute)
-                }
-        ) {
-            Text(
-                text = "Log In",
-                color = TextDarkColor,
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .padding(15.dp)
-            )
-        }
+            }
 
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 40.dp, vertical = 20.dp)
-                .background(color = Grey, shape = RoundedCornerShape(percent = 50))
-                .clickable {
-                    rootNavigation.navigate(passCodePageRoute)
-                }
-        ) {
-            Text(
-                text = "Become a client of the bank",
-                color = White,
+            Box(
                 modifier = Modifier
-                    .align(Alignment.Center)
-                    .padding(15.dp),
-                overflow = TextOverflow.Ellipsis,
-                maxLines = 1
-            )
+                    .fillMaxWidth()
+                    .padding(horizontal = 40.dp, vertical = 20.dp)
+                    .background(color = Grey2, shape = RoundedCornerShape(percent = 50))
+                    .clickable {
+                        rootNavigation.navigate(passCodePageRoute)
+                    }
+            ) {
+                Text(
+                    text = "Become a client of the bank",
+                    color = White,
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                        .padding(15.dp),
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1
+                )
+            }
         }
     }
 }

@@ -22,4 +22,11 @@
     <style name="Theme.LouBankUIDesign.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.LouBankUIDesign.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/purple_500</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_bg</item>
+        <item name="windowSplashScreenAnimationDuration">3</item>
+        <item name="postSplashScreenTheme">@style/Theme.LouBankUIDesign</item>
+    </style>
 </resources>
