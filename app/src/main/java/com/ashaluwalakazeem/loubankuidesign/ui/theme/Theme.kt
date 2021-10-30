@@ -7,15 +7,15 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Accent,
+    primaryVariant = Mint,
+    secondary = Purple
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Accent,
+    primaryVariant = Mint,
+    secondary = Purple
 
     /* Other default colors to override
     background = Color.White,
@@ -32,15 +32,11 @@ fun LouBankUIDesignTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable() () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
+    val colors = LightColorPalette
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = nunitoTypography,
         shapes = Shapes,
         content = content
     )

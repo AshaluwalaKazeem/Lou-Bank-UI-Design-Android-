@@ -66,6 +66,14 @@ dependencies {
 
     def accompanist_version = '0.20.0'
 
-    // ACCOMPANIST NAVIGATION
+    // ACCOMPANIST NAVIGATION ANIMATION
+    implementation "com.google.accompanist:accompanist-navigation-animation:$accompanist_version"
+    // ACCOMPANIST NAVIGATION MATERIAL
     implementation "com.google.accompanist:accompanist-navigation-material:$accompanist_version"
+    // ACCOMPANIST INSETS UI
+    implementation "com.google.accompanist:accompanist-insets-ui:$accompanist_version"
+    // ACCOMPANIST DRAWABLE PAINTER
+    implementation "com.google.accompanist:accompanist-drawablepainter:$accompanist_version"
+    // ACCOMPANIST SYSTEM UI CONTROLLER
+    implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
 }
