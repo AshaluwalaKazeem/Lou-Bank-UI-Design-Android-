@@ -78,4 +78,6 @@ dependencies {
     implementation "com.google.accompanist:accompanist-drawablepainter:$accompanist_version"
     // ACCOMPANIST SYSTEM UI CONTROLLER
     implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
+    // ACCOMPANIST PAGER INDICATORS
+    implementation "com.google.accompanist:accompanist-pager-indicators:$accompanist_version"
 }

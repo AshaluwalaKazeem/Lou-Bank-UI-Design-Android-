@@ -1,9 +1,11 @@
 package com.ashaluwalakazeem.loubankuidesign.utils
 
+import com.ashaluwalakazeem.loubankuidesign.R
 import com.ashaluwalakazeem.loubankuidesign.data.model.PassCodeData
 
 const val loginPageRoute = "loginPage"
 const val passCodePageRoute = "passCodePage"
+const val homeMainPageRoute = "HomeMainPage"
 val passCodeList = listOf<PassCodeData>(
     PassCodeData("1", ""),
     PassCodeData("2", "ABC"),
@@ -17,4 +19,11 @@ val passCodeList = listOf<PassCodeData>(
     PassCodeData("", ""),
     PassCodeData("0", ""),
     PassCodeData("DEL", ""),
+)
+val cardList = listOf<Int>(
+    R.drawable.card1,
+    R.drawable.card2,
+    R.drawable.card3,
+    R.drawable.card4,
+    R.drawable.card5,
 )

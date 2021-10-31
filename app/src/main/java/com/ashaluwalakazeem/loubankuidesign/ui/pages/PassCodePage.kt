@@ -12,7 +12,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.ripple.LocalRippleTheme
@@ -27,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.ashaluwalakazeem.loubankuidesign.R
 import com.ashaluwalakazeem.loubankuidesign.ui.theme.*
+import com.ashaluwalakazeem.loubankuidesign.utils.homeMainPageRoute
 import com.ashaluwalakazeem.loubankuidesign.utils.passCodeList
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
 import com.google.accompanist.insets.LocalWindowInsets
@@ -99,13 +99,15 @@ fun PassCodePage(rootNavigation: NavHostController) {
             }
         }
     ) {
-        PassCodePageContent()
+        CompositionLocalProvider(LocalRippleTheme provides RippleCustomTheme) {
+            PassCodePageContent(rootNavigation)
+        }
     }
 }
 
 @ExperimentalFoundationApi
 @Composable
-private fun PassCodePageContent() {
+private fun PassCodePageContent(rootNavigation: NavHostController) {
     var displayDemoModeDialog by rememberSaveable {
         mutableStateOf(false)
     }
@@ -173,7 +175,10 @@ private fun PassCodePageContent() {
                 },
                 text = {
                     TextButton(
-                        onClick = { /*TODO*/ },
+                        onClick = {
+                            displayDemoModeDialog = false
+                            rootNavigation.navigate(homeMainPageRoute)
+                        },
                         colors = ButtonDefaults.buttonColors(backgroundColor = White, TextDarkColor),
                         modifier = Modifier.fillMaxWidth()
                     ) {
