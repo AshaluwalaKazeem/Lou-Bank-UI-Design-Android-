@@ -12,3 +12,15 @@ This will display an AlertDialog. Then click on the "Demo mode" text button on t
 
 # ScreenShots
 
+1. Login Screen
+
+![ScreenShot](https://github.com/AshaluwalaKazeem/Lou-Bank-UI-Design-Android-/blob/master/screenshots/Screenshot_20211031-110834.png)
+
+2. PassCode Screen
+
+![ScreenShot](https://github.com/AshaluwalaKazeem/Lou-Bank-UI-Design-Android-/blob/master/screenshots/Screenshot_20211031-110845.png)
+![ScreenShot](https://github.com/AshaluwalaKazeem/Lou-Bank-UI-Design-Android-/blob/master/screenshots/Screenshot_20211031-110901.png)
+
+1. Home Dashboard Screen
+
+![ScreenShot](https://github.com/AshaluwalaKazeem/Lou-Bank-UI-Design-Android-/blob/master/screenshots/Screenshot_20211031-163352.png)
